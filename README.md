@@ -24,4 +24,4 @@ Herhangi bir soru veya öneriniz varsa, bize ulaşmaktan çekinmeyin! Ayrıca, [
 
 # Eğer bu kodları kullanacaksanız yapımcıyı (Voodix) veya şirketi (OriginsNW) belirtmek zorundasınız.
 
-Demo: originsmc.rf.gd
+# [DEMO](https://originsmc.rf.gd)
