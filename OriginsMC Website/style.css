@@ -1,0 +1,125 @@
+/* Transparent and animated cookie popup */
+.cookie-popup, .warning-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.4); /* Transparan */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Modern gölge */
+  max-width: 320px;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transform: scale(0.8); /* Küçük başlar */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Show state for popups */
+.cookie-popup.show, .warning-popup.show {
+  display: block;
+  opacity: 1;
+  transform: scale(1); /* Normal boyut ve görünebilir */
+}
+
+/* Hide state for popups */
+.cookie-popup.hide, .warning-popup.hide {
+  opacity: 0;
+  transform: scale(0.8); /* Küçülerek kapanır */
+}
+
+.cookie-content p, .warning-content p {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cookie-btn {
+  background: linear-gradient(135deg, #007BFF 0%, #00D4FF 100%); /* Gradient */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cookie-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-btn.reject {
+  background: linear-gradient(135deg, #FF4D4D 0%, #FF6A6A 100%);
+}
+
+.cookie-btn.reject:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+.expend {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: expendAnim 0.5s;
+    pointer-events: none;
+    z-index: 1;
+}
+.expend::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    top: 0px;
+    left: 0px;
+    animation: expendAnim2 0.5s;
+}
+
+
+@keyframes expendAnim {
+    from {
+        opacity: 1;
+        border-radius: 50%;
+    }
+    to {
+        border-radius: 50%;
+        opacity: 0;
+    }
+}
+
+@keyframes expendAnim2 {
+    from {
+        transform: scale(0.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.form-check {
+  display: flex;
+  align-items: center; /* Center the toggle vertically */
+  margin-left: auto; /* Push toggle to the right */
+}
+
+.form-check-label {
+  margin-left: 5px; /* Add space between toggle and label */
+  cursor: pointer;
+}
+
